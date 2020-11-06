@@ -2,6 +2,7 @@ package com.zipcodewilmington;
 
 /**
  * Created by leon on 1/24/18.
+ * Earl Atta-Fynn 11/3/2020.
  */
 public class PersonHandler {
     private final Person[] personArray;
@@ -10,51 +11,78 @@ public class PersonHandler {
         this.personArray = personArray;
     }
 
+
     public String whileLoop() {
+
+        Person[] people = getPersonArray();
         String result = "";
-        // create a `counter`
-        // while `counter` is less than length of array
-            // begin loop
+        String firstName = "";
+        String lastName = "";
+        StringBuilder intro = new StringBuilder();
+        int counter = 0;
 
-                // use `counter` to identify the `current Person` in the array
-                // get `string Representation` of `currentPerson`
-                // append `stringRepresentation` to `result` variable
+        while (counter < people.length) {
 
-            // end loop
+            firstName = people[counter].getFirstName().trim();
+            lastName = people[counter].getLastName().trim();
+            intro.append(
+                    "\nMy first name is " + firstName + "\n");
+            intro.append(
+                    "My last name is " + lastName);
+            counter++;
+        }
+
+        result = intro.toString();
         return result;
     }
 
 
 
     public String forLoop() {
+
+        Person[] people = getPersonArray();
         String result = "";
-        // identify initial value
-        // identify terminal condition
-        // identify increment
+        String firstName = "";
+        String lastName = "";
+        StringBuilder intro = new StringBuilder();
 
-        // use the above clauses to declare for-loop signature
-            // begin loop
-                // use `counter` to identify the `current Person` in the array
-                // get `string Representation` of `currentPerson`
-                // append `stringRepresentation` to `result` variable
-            // end loop
+        for (int i = 0; i < people.length; i++) {
 
+            firstName = people[i].getFirstName().trim();
+            lastName = people[i].getLastName().trim();
+            intro.append(
+                    "\nMy first name is " + firstName + "\n");
+            intro.append(
+                    "My last name is " + lastName);
+        }
+
+        result = intro.toString();
         return result;
     }
 
 
 
     public String forEachLoop() {
+
+        Person[] people = getPersonArray();
         String result = "";
-        // identify array's type
-        // identify array's variable-name
+        String firstName = "";
+        String lastName = "";
+        StringBuilder intro = new StringBuilder();
+        int index = 0;
 
-        // use the above discoveries to declare for-each-loop signature
-            // begin loop
-                // get `string Representation` of `currentPerson`
-                // append `stringRepresentation` to `result` variable
-            // end loop
+        for (Object current : people) {
 
+            firstName = people[index].getFirstName().trim();
+            lastName = people[index].getLastName().trim();
+            intro.append(
+                    "\nMy first name is " + firstName + "\n");
+            intro.append(
+                    "My last name is " + lastName);
+            index++;
+        }
+
+        result = intro.toString();
         return result;
     }
 

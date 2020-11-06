@@ -2,6 +2,7 @@ package com.zipcodewilmington;
 
 /**
  * Created by leon on 1/24/18.
+ * Earl Atta-Fynn 11/3/2020.
  */
 public class Person {
     private final String firstName;
